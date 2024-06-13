@@ -1,0 +1,42 @@
+{
+  "name": "react-any-cursor",
+  "version": "1.0.0",
+  "description": "A react component for creating custom cursors",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrille0313/react-any-cursor.git"
+  },
+  "author": "chrille0313",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrille0313/react-any-cursor/issues"
+  },
+  "homepage": "https://github.com/chrille0313/react-any-cursor#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "husky": "^9.0.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
