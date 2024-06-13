@@ -12,7 +12,9 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -25,14 +27,24 @@
   },
   "homepage": "https://github.com/chrille0313/react-any-cursor#readme",
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.5.0",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@storybook/addon-essentials": "^8.1.8",
+    "@storybook/addon-interactions": "^8.1.8",
+    "@storybook/addon-links": "^8.1.8",
+    "@storybook/addon-onboarding": "^8.1.8",
+    "@storybook/blocks": "^8.1.8",
+    "@storybook/react": "^8.1.8",
+    "@storybook/react-vite": "^8.1.8",
+    "@storybook/test": "^8.1.8",
     "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "husky": "^9.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "storybook": "^8.1.8",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
