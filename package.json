@@ -30,6 +30,7 @@
     "@chromatic-com/storybook": "^1.5.0",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@storybook/addon-a11y": "^8.1.8",
     "@storybook/addon-essentials": "^8.1.8",
     "@storybook/addon-interactions": "^8.1.8",
     "@storybook/addon-links": "^8.1.8",
@@ -42,10 +43,12 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "husky": "^9.0.11",
+    "prettier-plugin-organize-imports": "^3.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "storybook": "^8.1.8",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "peerDependencies": {
     "react": "^18.3.1",
