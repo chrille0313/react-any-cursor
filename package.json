@@ -22,11 +22,12 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm run prettier && npm run rollup",
-    "prettier": "prettier --write src/",
-    "rollup": "rollup -c --bundleConfigAsCjs",
-    "test": "echo \"Error: no test specified\"",
     "prepare": "husky && npm run build",
+    "build": "npm run rollup",
+    "test": "echo \"Error: no test specified\"",
+    "rollup": "rollup -c",
+    "prettier": "prettier --write src/",
+    "lint-staged": "lint-staged",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "semantic-release": "semantic-release"
@@ -60,6 +61,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
     "prettier-plugin-organize-imports": "^3.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
