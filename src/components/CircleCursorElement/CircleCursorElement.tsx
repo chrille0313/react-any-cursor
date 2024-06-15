@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { CursorAlphaProps, CursorContext, CursorProps } from '../../types/Cursor';
+import { CursorAlphaProps, CursorContext, CursorProps, CursorScaleProps } from '../../types/Cursor';
 
-export interface CircleCursorElementProps extends CursorProps, CursorAlphaProps {
+export interface CircleCursorElementProps extends CursorProps, CursorScaleProps, CursorAlphaProps {
   radius: number;
   color?: string;
 }
