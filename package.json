@@ -2,32 +2,39 @@
   "name": "react-any-cursor",
   "version": "0.0.0-development",
   "description": "A react component for creating custom cursors",
-  "type": "module",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "prettier --write src/ && npm run rollup",
-    "rollup": "rollup -c --bundleConfigAsCjs",
-    "test": "echo \"Error: no test specified\"",
-    "prepare": "husky",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "semantic-release": "semantic-release"
-  },
+  "author": "chrille0313",
+  "license": "MIT",
+  "homepage": "https://github.com/chrille0313/react-any-cursor#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrille0313/react-any-cursor.git"
   },
-  "author": "chrille0313",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/chrille0313/react-any-cursor/issues"
   },
-  "homepage": "https://github.com/chrille0313/react-any-cursor#readme",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/types.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run prettier && npm run rollup",
+    "prettier": "prettier --write src/",
+    "rollup": "rollup -c --bundleConfigAsCjs",
+    "test": "echo \"Error: no test specified\"",
+    "prepare": "husky && npm run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "semantic-release": "semantic-release"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
     "@commitlint/cli": "^19.3.0",
@@ -64,10 +71,6 @@
     "storybook": "^8.1.8",
     "typescript": "^5.4.5",
     "vite-tsconfig-paths": "^4.3.2"
-  },
-  "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
   },
   "publishConfig": {
     "access": "public"
