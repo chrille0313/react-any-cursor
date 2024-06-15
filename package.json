@@ -1,6 +1,6 @@
 {
   "name": "react-any-cursor",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A react component for creating custom cursors",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -14,11 +14,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrille0313/react-any-cursor.git"
+    "url": "https://github.com/chrille0313/react-any-cursor.git"
   },
   "author": "chrille0313",
   "license": "MIT",
@@ -65,5 +66,8 @@
   "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "publishConfig": {
+    "access": "restricted"
   }
 }
