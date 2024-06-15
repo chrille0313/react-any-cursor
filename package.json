@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "prettier --write src/ && npm run rollup",
-    "rollup": "rollup -c --bundleConfigAsCjs",
+    "rollup": "rollup -c",
     "test": "echo \"Error: no test specified\"",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
