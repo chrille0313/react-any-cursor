@@ -1,0 +1,58 @@
+name: Release CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read # for checkout
+
+jobs:
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
+  
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x]
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4.0.2
+      with: 
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run build
+    - run: npm test
+  
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [build]
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js ${{ matrix.node-version }} environment
+      uses: actions/setup-node@v4.0.2
+      with: 
+        node-version: "lts/*"
+    - name: Install dependencies
+      run: npm ci
+    - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+      run: npm audit signatures
+    - name: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: npm run semantic-release
