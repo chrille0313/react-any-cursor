@@ -5,7 +5,7 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
-import packageJson from './package.json';
+import packageJson from './package.json' with { type: 'json' };
 
 export default [
   {
@@ -37,7 +37,7 @@ export default [
   {
     input: 'src/index.ts',
     output: [{ file: packageJson.types, format: 'es' }],
-    plugins: [dts.default()],
+    plugins: [dts()],
     external: ['/.css$/']
   }
 ];
