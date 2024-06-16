@@ -26,7 +26,11 @@ export default [
       external(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json', sourceMap: false }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        sourceMap: false,
+        exclude: ['**/*.stories.*']
+      }),
       terser(),
       postcss({
         minimize: true
